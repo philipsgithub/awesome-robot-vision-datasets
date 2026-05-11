@@ -65,7 +65,7 @@ This list focuses on datasets relevant to robot perception. Most entries are obj
 
 | Dataset | Original task | Labels | Scale | Notes |
 |---|---|---:|---:|---|
-| [HANDAL](https://nvlabs.github.io/HANDAL/) | Category-level 6D pose estimation with affordance | RGB, video, multi-view, mask, bbox, 6D pose, part affordance | ≈310k images / 17 classes / 212 instances | Robot-graspable tools, semi-automatically annotated from handheld videos. Includes NeRF-style mesh reconstructions and graspable-part labels. Potentially useful for category-level FSC/FSOD.|
+| [HANDAL](https://nvlabs.github.io/HANDAL/) | Category-level 6D pose estimation with affordance | RGB, video, multi-view, mask, bbox, 6D pose, part affordance | ≈310k images / 17 classes / 212 instances | Robot-graspable tools, semi-automatically annotated from handheld videos. Includes mesh reconstructions using (Instant-NGP)[https://github.com/NVlabs/instant-ngp] and graspable-part labels. Potentially useful for category-level FSC/FSOD.|
 
 #### Warehouse and logistics
 
@@ -81,7 +81,7 @@ This list focuses on datasets relevant to robot perception. Most entries are obj
 |---|---|---:|---:|---|
 | [IMD (Industrial Metallic Dataset)](https://arxiv.org/abs/2509.11680) | 6D pose estimation | RGB-D, mask, 6D pose | ≈22k images / 45 instances | Reflective metallic CAD-paired parts captured by a robot-mounted RGB-D sensor under top-down and 45° views. Auto-annotated with SAM2.|
 | [LINEMOD](https://bop.felk.cvut.cz/datasets/) | 6D pose estimation | RGB, RGB-D, mask, bbox, 6D pose | ≈18k images / 15 instances | RGB-D 6D-pose benchmark for texture-less objects. The limited real training data per object historically encouraged synthetic augmentation. |
-| [MR6D](https://huggingface.co/datasets/anas-gouda/mr6d) | 6D pose estimation | RGB, RGB-D, mask, 6D pose | ≈8.5k images / 16 instances | Targets mobile-robot challenges such as long range, extreme viewpoints, and occlusion on industrial parts. Covers both static and dynamic interactions. |
+| [MR6D](https://huggingface.co/datasets/anas-gouda/mr6d) | 6D pose estimation | RGB, RGB-D, mask, 6D pose | ≈8.5k images / 92 real-world scenes (indoor & outdoor) / (16 instances)[https://huggingface.co/datasets/anas-gouda/mr6d/blob/main/models_names.json] | Targets mobile-robot challenges such as long range, extreme viewpoints, and occlusion on industrial parts. Covers both static and dynamic interactions. |
 | [T-LESS](https://cmp.felk.cvut.cz/t-less/) | 6D pose estimation | RGB-D, mask, 6D pose | ≈49k images / 30 instances | Texture-less industrial parts with shape symmetries and part-of relations. Part of the (BOP benchmark)[https://bop.felk.cvut.cz/home/], which contains many more datasets for industrial-related tasks.|
 
 #### Generic indoor scenes and instance recognition
@@ -91,7 +91,7 @@ This list focuses on datasets relevant to robot perception. Most entries are obj
 | [InsDet](https://insdet.github.io/) | Instance retrieval / recognition; instance detection | RGB, multi-view, mask, bbox, image class | ≈2.4k profile images + 160 scene images / 100 instances | 100 object instances captured turntable-style on white background, then placed in 160 high-resolution cluttered scenes.|
 | [OCID (Object Clutter Indoor Dataset)](https://www.acin.tuwien.ac.at/en/vision-for-robotics/software-tools/object-clutter-indoor-dataset/) | Instance segmentation | RGB-D, point-wise mask, point cloud | ≈2.3k labelled point clouds / up to 20 objects/scene | Built with the EasyLabel semi-automatic tool. Clutter is graded by adding objects one at a time, so the same scene appears at multiple difficulty levels. Limited object-model variety.|
 | [OCID-Ref](https://github.com/lluma/OCID-Ref) | Referring-expression grounding; object detection | RGB, RGB-D, bbox, text, attributes, relations | ≈2.3k scenes / ≈310k referring expressions | Extends OCID with visual attributes and spatial/colour relations, with a focus on grounding occluded targets using 2D and 3D information.|
-| [STIOS (Stereo Instances on Surfaces)](https://www.dlr.de/en/rm/research/publications-and-downloads/datasets/stereoinstancesonsurfaces) | Unknown-object instance segmentation | RGB, RGB-D, stereo multi-view, mask, image class | ≈190 stereo pairs per sensor | Evaluation-only set, no training split. Covers textureless and texture-rich surfaces for stereo and RGB-D segmentation.|
+| [STIOS (Stereo Instances on Surfaces)](https://www.dlr.de/en/rm/research/publications-and-downloads/datasets/stereoinstancesonsurfaces) | Unknown-object instance segmentation | RGB, RGB-D, stereo multi-view, mask, image class | 2 sensors / 192 samples per sensor / 8 scenes / 15 objects| Evaluation-only set, no training split. Covers textureless and texture-rich surfaces for stereo and RGB-D segmentation. Objects belong to the (YCB Video Dataset)[https://journals.sagepub.com/doi/full/10.1177/0278364917700714].|
 | [UW-IS Occluded](https://figshare.com/articles/dataset/UW_Indoor_Scenes_UW-IS_Occluded_Dataset/20506506) | Object detection / instance recognition | RGB-D, video, bbox, mask, 6D pose | ≈8.5k images / 20 classes / ≈43k instances | Successor to the original UW-IS dataset. Robot-eye RealSense D435 capture across lounge and warehouse scenes with explicit illumination and occlusion variation.|
 
 ---
